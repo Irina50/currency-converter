@@ -1,0 +1,28 @@
+
+  <mat-form-field class="currency">
+    @if(!selectedCurrency) {
+    <mat-label>Select the currency</mat-label>
+    }
+    <mat-select [(value)]="selectedCurrency" (selectionChange)="onCurrencyChange($event.value)">
+      <mat-select-trigger>
+        @if(selectedCurrency) {
+        <div class="currency-option">
+          <img
+            [src]="getCurrencyByCode(selectedCurrency)?.flag"
+            [alt]="getCurrencyByCode(selectedCurrency)?.code"
+            style="width: 24px; height: 24px; margin-right: 8px;">
+        {{ getCurrencyByCode(selectedCurrency)?.code }} - {{ getCurrencyByCode(selectedCurrency)?.name }}
+        </div>
+        }
+      </mat-select-trigger>
+      <mat-option *ngFor="let currency of currencies" [value]="currency.code">
+        <div class="currency-option">
+          <img [src]="currency.flag" [alt]="currency.code" style="width: 24px; height: 24px; margin-right: 8px;">
+          {{ currency.code }} - {{ currency.name }}
+        </div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+

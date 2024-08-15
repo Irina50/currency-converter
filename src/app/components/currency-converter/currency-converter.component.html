@@ -1,0 +1,26 @@
+<div class="currency-converter">
+  <form [formGroup]="converterForm">
+    <div class="input-group">
+      <app-currency-selector (currencyChange)="onFromCurrencyChange($event)
+"></app-currency-selector>
+      <mat-form-field class="currency-input">
+        <mat-label>Amount</mat-label>
+        <input type="number"
+               matInput
+               formControlName="baseAmount"
+        >
+      </mat-form-field>
+    </div>
+    <div class="input-group">
+      <app-currency-selector (currencyChange)="onToCurrencyChange($event)"></app-currency-selector>
+      <mat-form-field class="currency-input">
+        <mat-label>Amount</mat-label>
+        <input type="number"
+               matInput
+               formControlName="secondaryAmount"
+        >
+      </mat-form-field>
+    </div>
+
+  </form>
+</div>

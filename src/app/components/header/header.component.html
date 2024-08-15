@@ -1,0 +1,35 @@
+<header class="header-content">
+  <div class="logo">
+    <img src="../../../assets/exchange-logo.png" alt="Currency Exchange Logo" class="logo-img">
+  </div>
+<h1 class="title">Currency Exchange</h1>
+</header>
+<section class="currencies">
+  <div class="currency base-currency">
+    <img [src]="baseCurrency.flag" [alt]="baseCurrency.country">
+    <span>{{baseCurrency.code}}</span>
+    <span>{{baseCurRate}}</span>
+  </div>
+  <div class="secondary-currencies">
+    <p class="currency secondary-currency">
+      <img
+        [src]="secondCurrency.flag"
+        [alt]="secondCurrency.country"
+        class="currency-img"
+      >
+      <span>{{secondCurrency.code}}</span>
+      <span>{{usdRate}}</span>
+    </p>
+    <p class="currency secondary-currency">
+      <img
+        [src]="thirdCurrency.flag"
+        [alt]="thirdCurrency.country"
+        class="currency-img"
+        width="30"
+        height="25"
+      >
+      <span>{{thirdCurrency.code}}</span>
+      <span>{{euroRate}}</span>
+    </p>
+  </div>
+</section>
